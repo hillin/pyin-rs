@@ -1,12 +1,17 @@
 mod core;
 mod fft;
+#[cfg(feature = "pyin")]
 mod hmm;
+#[cfg(feature = "pyin")]
 mod pyin;
+#[cfg(feature = "yin")]
 mod yin;
 
 use std::ops::Range;
 
+#[cfg(feature = "pyin")]
 pub use pyin::Pyin;
+#[cfg(feature = "yin")]
 pub use yin::Yin;
 
 pub trait PitchDetector {
