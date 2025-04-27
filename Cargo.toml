@@ -10,10 +10,15 @@ readme = "README.md"
 keywords = ["pitch", "audio", "fft", "yin", "pyin"]
 categories = ["multimedia::audio", "algorithms"]
 
+[features]
+default = ["yin", "pyin"]
+yin = []
+pyin = ["dep:bio", "dep:ndarray"]
+
 [dependencies]
 realfft = "3.4.0"
-bio = "2.0.3"
-ndarray = "0.16.1"
+bio = { version = "2.0.3", optional = true }
+ndarray = { version = "0.16.1", optional = true }
 
 [dev-dependencies]
 rstest = "0.23.0"
